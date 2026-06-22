@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>竞彩网 · 信息专题介绍</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; background: #f5f6fa; color: #1e2a3a; line-height: 1.6; }
+
+  /* 深色横幅头图 */
+  .hero {
+    background: linear-gradient(145deg, #0b1a2b 0%, #1a2d44 100%);
+    padding: 4.5rem 2rem 3.8rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -40%; left: -20%;
+    width: 140%; height: 180%;
+    background: radial-gradient(circle at 30% 40%, rgba(255,180,50,0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #f0eae0;
+    position: relative;
+    z-index: 2;
+  }
+  .hero .sub {
+    color: #b6c8da;
+    font-size: 1.1rem;
+    margin-top: 0.9rem;
+    font-weight: 300;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* 浅色正文区 */
+  .container {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 2.5rem 1.8rem 3rem;
+  }
+
+  /* 卡片／段落样式 */
+  .section-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2.2rem 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    border: 1px solid #eef1f7;
+    transition: box-shadow 0.2s;
+  }
+  .section-card:hover {
+    box-shadow: 0 6px 20px rgba(0, 20, 40, 0.04);
+  }
+
+  .section-card h2 {
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: #13222f;
+    border-left: 4px solid #e08e2e;
+    padding-left: 0.9rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .section-card p, .section-card li {
+    font-size: 0.98rem;
+    color: #2d3b4c;
+    margin-bottom: 0.65rem;
+  }
+
+  .feature-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-top: 0.5rem;
+  }
+  .feature-item {
+    flex: 1 1 180px;
+    background: #f7f9fc;
+    padding: 0.9rem 1rem;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    border-left: 3px solid #cf8d3a;
+  }
+
+  .faq-mini {
+    margin-top: 0.5rem;
+  }
+  .faq-mini dt {
+    font-weight: 600;
+    color: #1e2a3a;
+    margin: 0.8rem 0 0.2rem;
+    font-size: 0.98rem;
+  }
+  .faq-mini dd {
+    margin-left: 0;
+    font-size: 0.93rem;
+    color: #3c4c5e;
+    border-left: 2px solid #e1e7ef;
+    padding-left: 0.9rem;
+    margin-bottom: 0.3rem;
+  }
+
+  /* 强调色链接 */
+  a {
+    color: #c6741e;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s, color 0.1s;
+  }
+  a:hover {
+    color: #a45f16;
+    border-bottom: 1px solid #c68b4a;
+  }
+
+  /* 页尾提示 */
+  .footer-note {
+    margin-top: 2.5rem;
+    padding: 2rem 1.8rem;
+    background: #eef2f8;
+    border-radius: 20px;
+    text-align: center;
+    color: #2c3e55;
+    font-size: 0.95rem;
+    border: 1px solid #dce3ed;
+  }
+  .footer-note .small {
+    font-size: 0.82rem;
+    color: #586f87;
+    margin-top: 0.6rem;
+    opacity: 0.7;
+  }
+
+  /* 响应式 */
+  @media (max-width: 640px) {
+    .hero { padding: 3.2rem 1.2rem 2.5rem; }
+    .hero h1 { font-size: 2rem; }
+    .container { padding: 1.8rem 1rem 2.5rem; }
+    .section-card { padding: 1.6rem 1.2rem; }
+    .feature-grid { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>竞彩 · 综合信息</h1>
+  <div class="sub">认识站点 · 理解可信来源</div>
+</header>
+
+<main class="container">
+
+  <!-- 第一篇：站点介绍与背景 -->
+  <section class="section-card">
+    <h2>站点定位与数据背景</h2>
+    <p>该平台长期服务于对竞猜类信息有需求的用户，聚合赛事数据、实时赔率与赛前分析。内容覆盖主流足球、篮球联赛，同时整合历史统计与近期交锋。作为中文领域内持续运营的参考站点之一，<a href="https://appcn-sporttery.com">竞彩网</a>提供结构化的数据面板，方便用户快速查阅对阵与指数变化。</p>
+    <p>平台底层数据对接多个公开体育数据接口，并经过二次清洗与整合，在信息呈现上注重时效性。站内包含赛事列表、球队数据、投注分布以及赔率走势图表，整体偏向工具型信息门户。</p>
+  </section>
+
+  <!-- 第二篇：可信说明与信息架构（取代一般特点罗列） -->
+  <section class="section-card">
+    <h2>信息可信度与架构特点</h2>
+    <p>从信息组织角度看，站点主要依赖规则化数据展示，减少主观评述，以原始数据与赔率变化曲线为主。各页面均标注数据源更新周期，部分模块提供延迟说明，帮助用户判断参考价值。站内无用户预测或论坛式推荐，内容边界清晰。</p>
+    <div class="feature-grid">
+      <div class="feature-item">📊 赛事数据：覆盖亚欧主流联赛</div>
+      <div class="feature-item">🔄 赔率对比：多家机构历史水位</div>
+      <div class="feature-item">📈 走势图表：近10场/赛季变化</div>
+      <div class="feature-item">🧩 分类导航：按联赛/日期/类型</div>
+    </div>
+    <p style="margin-top: 0.8rem;">数据页面附带简单的说明文本，不同列表页之间可快速跳转。整体设计偏向实用与效率，不包含社区内容或用户生成内容。</p>
+  </section>
+
+  <!-- 第三篇：实际使用场景摘录 + 简要FAQ摘要（避免重复段落结构） -->
+  <section class="section-card">
+    <h2>使用场景与常见问题</h2>
+    <p>日常使用中，用户多通过该平台查看当日对阵列表以及赔率波动趋势。部分分析型用户利用历史数据进行简单对比，结合自身方法做初步判断。平台不提供任何投注建议，仅作为信息聚合工具。</p>
+    
+    <dl class="faq-mini">
+      <dt>数据实时性如何？</dt>
+      <dd>主要赔率数据为延迟约1–3分钟更新，具体见页面内提示。赛事时间、比分等基础信息与官方保持一致。</dd>
+      <dt>是否需要注册？</dt>
+      <dd>浏览基础数据无需账户，部分高级筛选或历史查询功能可能需要临时登录。</dd>
+      <dt>移动端适配情况？</dt>
+      <dd>站点支持响应式布局，在手机与平板上可正常使用核心功能，图表可缩放查看。</dd>
+    </dl>
+
+    <p style="margin-top: 0.8rem;">更多细节可以通过 <a href="https://appcn-sporttery.com">竞彩网</a> 各具体页面进一步了解，站内配有索引与分类筛选。</p>
+  </section>
+
+  <!-- 页尾访问提示（非直接‘进入官网’类表述） -->
+  <div class="footer-note">
+    <p>如需直接浏览完整赛事数据面板、赔率走势与历史对照，可至主站查阅。</p>
+    <p style="margin-top: 0.5rem;"><a href="https://appcn-sporttery.com" style="font-weight: 600; border-bottom: 1px solid currentColor;">竞彩网</a> · 信息整理与参考平台</p>
+    <div class="small">本页面为独立介绍页，内容基于公开信息整理，仅供了解站点框架与数据特点。</div>
+  </div>
+
+</main>
+
+</body>
+</html>

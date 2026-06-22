@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>竞彩网 · 陪伴每一次专注</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #f7f9fc;
+            color: #1e2a3a;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        .wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+        /* 深色头图 */
+        .hero {
+            background: linear-gradient(145deg, #0b1928 0%, #1d2f42 100%);
+            color: #e3edf5;
+            padding: 70px 24px 60px;
+            border-radius: 0 0 32px 32px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 240px;
+            height: 240px;
+            background: radial-gradient(circle, rgba(64, 140, 255, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 550;
+            letter-spacing: 0.01em;
+            margin-bottom: 12px;
+            color: #f4f9ff;
+            position: relative;
+        }
+        .hero .subtitle {
+            font-size: 1.1rem;
+            color: #b0c9e2;
+            margin-bottom: 22px;
+            max-width: 560px;
+        }
+        .hero .intro {
+            font-size: 0.98rem;
+            color: #cddef0;
+            max-width: 640px;
+            line-height: 1.75;
+        }
+
+        /* 正文区 - 浅色 */
+        .section-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 36px 32px;
+            margin-bottom: 28px;
+            box-shadow: 0 4px 14px rgba(0, 20, 40, 0.04);
+            border: 1px solid #eaeef4;
+        }
+        .section-card h2 {
+            font-size: 1.38rem;
+            font-weight: 530;
+            color: #0d1f31;
+            margin-bottom: 18px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #2266cc;
+            display: inline-block;
+        }
+        .section-card p {
+            margin-bottom: 14px;
+            color: #2c3d52;
+        }
+        .section-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 亮点网格 */
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-top: 16px;
+        }
+        .highlight-item {
+            background: #f3f7fd;
+            border-radius: 14px;
+            padding: 18px 16px;
+            border-left: 4px solid #2266cc;
+        }
+        .highlight-item strong {
+            display: block;
+            font-size: 1rem;
+            color: #0d1f31;
+            margin-bottom: 4px;
+        }
+        .highlight-item span {
+            font-size: 0.92rem;
+            color: #3f5772;
+        }
+
+        /* 使用建议卡片 */
+        .suggestion-list {
+            list-style: none;
+            padding: 0;
+        }
+        .suggestion-list li {
+            position: relative;
+            padding: 8px 0 8px 28px;
+            font-size: 0.96rem;
+            color: #2c3d52;
+            border-bottom: 1px dashed #dee6ef;
+        }
+        .suggestion-list li:last-child {
+            border-bottom: none;
+        }
+        .suggestion-list li::before {
+            content: "›";
+            position: absolute;
+            left: 6px;
+            font-size: 1.3rem;
+            color: #2266cc;
+            font-weight: bold;
+        }
+
+        /* FAQ 摘要 */
+        .faq-mini {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 10px;
+        }
+        .faq-q {
+            font-weight: 550;
+            color: #0d1f31;
+            font-size: 0.98rem;
+        }
+        .faq-a {
+            color: #3f5772;
+            font-size: 0.93rem;
+            margin-left: 8px;
+            padding-left: 12px;
+            border-left: 2px solid #c8d6e6;
+        }
+
+        /* 链接强调色 */
+        a {
+            color: #2266cc;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        a:hover {
+            color: #0f4aa0;
+            border-bottom-color: #0f4aa0;
+        }
+        .hero a {
+            color: #93beff;
+            border-bottom-color: rgba(147, 190, 255, 0.3);
+        }
+        .hero a:hover {
+            color: #c2d9ff;
+            border-bottom-color: #c2d9ff;
+        }
+
+        .note-box {
+            background: #ecf3fc;
+            border-radius: 16px;
+            padding: 18px 22px;
+            border-left: 6px solid #2266cc;
+            margin-top: 16px;
+            font-size: 0.94rem;
+            color: #1e2e44;
+        }
+
+        /* 响应式 */
+        @media (max-width: 700px) {
+            .hero {
+                padding: 48px 18px 44px;
+                border-radius: 0 0 20px 20px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-card {
+                padding: 24px 18px;
+            }
+            .highlights-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+        }
+        @media (max-width: 450px) {
+            .wrapper {
+                padding: 0 12px 40px;
+            }
+            .hero .subtitle {
+                font-size: 0.96rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+
+    <!-- 深色头图 hero -->
+    <div class="hero">
+        <h1>再见到你，真好</h1>
+        <div class="subtitle">收藏一个习惯，持续一份关注</div>
+        <p class="intro">
+            有时候只是轻轻一点，回到熟悉的地方看看。<br>
+            不需要太多理由，就像傍晚记得留一扇窗。<br>
+            我们把体验保持得干净利落——<a href="https://app-wap-sporttery.com">竞彩网</a>一直在这里，等你想起的时候。
+        </p>
+    </div>
+
+    <!-- 产品说明：摘要 + 亮点 + 使用建议 + 可信克制的访问说明 -->
+    <div class="section-card">
+        <h2>摘录·关心的事</h2>
+        <p>从头到尾，<a href="https://app-wap-sporttery.com">竞彩网</a>想做的并不多：让每次回来都自然顺手，不必重新适应。页面加载流畅，信息层级清晰，老用户也能一秒找回节奏。如果你之前收藏过，现在打开会发现——它还是那副利落模样，只是细节更温润了。</p>
+        <p>对于新朋友，这里没有铺天盖地的弹窗，没有眼花缭乱的跳转。从首屏到功能入口，每一步都克制。你可以先逛逛，再决定要不要固定下来。</p>
+    </div>
+
+    <div class="section-card">
+        <h2>让人愿意留下的细节</h2>
+        <div class="highlights-grid">
+            <div class="highlight-item">
+                <strong>📌 一次收藏，长久有效</strong>
+                <span>无论何时返回，界面不走样，链接不失效。收藏夹里的<a href="https://app-wap-sporttery.com">竞彩网</a>始终能打开。</span>
+            </div>
+            <div class="highlight-item">
+                <strong>⚡ 轻量响应，随设备适应</strong>
+                <span>手机、平板、桌面——内容自动适配，字号和间距都照顾阅读舒适度。</span>
+            </div>
+            <div class="highlight-item">
+                <strong>🧭 导航清晰，不迷路</strong>
+                <span>主要入口摆在明处，不藏不绕。即使隔段时间再来，操作逻辑依然一眼明白。</span>
+            </div>
+            <div class="highlight-item">
+                <strong>🔒 克制的信息呈现</strong>
+                <span>不诱导点击，不过度渲染。每处链接都基于实际功能，保持可信赖的浏览氛围。</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-card">
+        <h2>一些使用上的小建议</h2>
+        <ul class="suggestion-list">
+            <li>如果你习惯用手机浏览器，不妨把<a href="https://app-wap-sporttery.com">竞彩网</a>添加到主屏幕，下次找起来更顺手。</li>
+            <li>每隔一段时间回来看看，页面结构和核心信息通常保持稳定，无需重新学习。</li>
+            <li>遇到加载异常时，先检查网络环境，很多时候只是暂时的信号波动。</li>
+            <li>如果想了解更完整的功能，可以在站内慢慢翻看，每个模块都有对应的说明入口。</li>
+        </ul>
+        <div class="note-box">
+            💡 持续关注的意思是：你不需要每天来，但当你需要的时候，它就在那里。
+        </div>
+    </div>
+
+    <div class="section-card">
+        <h2>你可能想知道的 · 简短问答</h2>
+        <div class="faq-mini">
+            <div class="faq-q">问：为什么推荐我收藏这个站点？</div>
+            <div class="faq-a">因为<a href="https://app-wap-sporttery.com">竞彩网</a>的移动端体验经过专门优化，加载快、界面干净，适合作为常备参考。收藏后随时可回，不必每次都搜索。</div>
+
+            <div class="faq-q">问：页面会频繁改版吗？</div>
+            <div class="faq-a">不会。设计上追求稳定，功能迭代会通过小版本更新平滑进行，不影响已有使用习惯。</div>
+
+            <div class="faq-q">问：是否需要注册或登录才能浏览主要内容？</div>
+            <div class="faq-a">大部分信息对访客开放，无需强制注册。部分个性化功能可能需要账号，但浏览和基础使用门槛很低。</div>
+        </div>
+    </div>
+
+    <div class="section-card" style="border-left: 4px solid #2266cc;">
+        <p style="font-size:0.95rem; color:#2160b0;">
+            <strong>一点说明：</strong> 本文介绍基于实际使用体验整理，力求真实反映网站面貌。具体功能与内容以 <a href="https://app-wap-sporttery.com">竞彩网</a> 实际页面为准，建议你亲自打开感受。
+        </p>
+    </div>
+
+</div>
+</body>
+</html>
